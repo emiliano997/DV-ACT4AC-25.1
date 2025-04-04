@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Tareas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body class="container">
+    <h1>App Tareas</h1>
+
+    <div>
+      <input type="text" id="task-title" placeholder="Escribe una tarea" />
+      <input
+        type="text"
+        id="task-description"
+        placeholder="Escribe una descripción"
+      />
+      <button class="waves-effect waves-light btn" id="add-task">
+        Agregar Tarea
+      </button>
+      <button class="waves-effect waves-light btn" id="get-last-task">
+        Obtener Ultima Tarea
+      </button>
+      <button class="waves-effect waves-light btn" id="delete-last-task">
+        Eliminar Ultima Tarea
+      </button>
+    </div>
+
+    <div id="tasks"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

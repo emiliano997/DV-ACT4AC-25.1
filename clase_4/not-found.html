@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Not found</h1>
+
+    <p>Serás redirigido al inicio en: <span id="contador">5</span></p>
+
+    <script>
+      setTimeout(() => {
+        // Redirigir a la página de inicio
+        window.location.href = "./index.html";
+      }, 5000);
+
+      const contador = document.getElementById("contador");
+      let tiempoRestante = 5;
+
+      setInterval(() => {
+        tiempoRestante--;
+        contador.innerText = tiempoRestante;
+      }, 1000);
+    </script>
+  </body>
+</html>

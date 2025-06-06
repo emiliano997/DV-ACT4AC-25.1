@@ -1,0 +1,37 @@
+### GET All Products
+
+GET http://localhost:5000/api/products
+
+### GET With Query Parameters
+
+GET http://localhost:5000/api/products?orderBy=price&category=accessories
+
+### GET By ID
+
+GET http://localhost:5000/api/products/1
+
+### POST Create Product
+
+POST http://localhost:5000/api/products
+Content-Type: application/json
+
+{
+  "name": "MacBook Pro 2023",
+  "price": 2500,
+  "category": "laptops"
+}
+
+### PUT Update Product
+
+PUT http://localhost:5000/api/products/1
+Content-Type: application/json
+
+{
+  "name": "MacBook Pro 2023",
+  "price": 2500,
+  "category": "laptops"
+}
+
+### DELETE Product
+
+DELETE http://localhost:5000/api/products/1

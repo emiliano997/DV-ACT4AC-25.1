@@ -1,1 +1,5 @@
 node_modules
+pgadmin_data
+postgres_data
+/src/generated/prisma
+.env

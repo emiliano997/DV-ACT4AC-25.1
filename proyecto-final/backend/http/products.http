@@ -17,8 +17,11 @@ Content-Type: application/json
 
 {
   "name": "MacBook Pro 2023",
+  "description": "Latest model with M2 chip",
   "price": 2500,
-  "category": "laptops"
+  "stock": 10,
+  "category": "laptops",
+  "image": "https://example.com/macbook-pro-2023.jpg"
 }
 
 ### PUT Update Product

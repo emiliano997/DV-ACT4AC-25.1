@@ -1,11 +1,13 @@
 import express from "express";
 import { productsRouter } from "./routes/products.routes.js";
+import morgan from "morgan";
 
 // Creamos nuestra app de Express
 const app = express();
 const PORT = 5000;
 
 // Configuración de Express
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

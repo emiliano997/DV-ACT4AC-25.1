@@ -1,4 +1,6 @@
 import { createContext, useContext, useState } from "react";
+import { BACKEND_URL } from "../utils/constants";
+import { jwtDecode } from "jwt-decode";
 
 const users = [
   {
@@ -36,45 +38,57 @@ export function AuthProvider({ children }) {
       : null
   );
 
-  const login = (username, password) => {
-    const user = users.find((user) => user.username === username);
+  const login = async (email, password) => {
+    try {
+      const res = await fetch(`${BACKEND_URL}/auth/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    if (!user) {
-      alert("User not found");
-      return false;
-    }
+      if (!res.ok) {
+        console.log("Hubo un error");
+        return;
+      }
 
-    if (user.password !== password) {
-      alert("Incorrect password");
-      return false;
-    }
+      const { token } = await res.json();
+      console.log(token);
 
-    setIsLoggedIn(true);
-    setUser({
-      id: user.id,
-      username: user.username,
-      email: user.email,
-      role: user.role,
-    });
+      const user = jwtDecode(token);
 
-    localStorage.setItem("isLoggedIn", true);
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
+      setIsLoggedIn(true);
+      setUser({
         id: user.id,
-        username: user.username,
         email: user.email,
         role: user.role,
-      })
-    );
+      });
 
-    return true;
+      localStorage.setItem("isLoggedIn", true);
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          id: user.id,
+          username: user.username,
+          email: user.email,
+          role: user.role,
+        })
+      );
+      localStorage.setItem("token", token);
+
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   };
 
   const logout = () => {
     setIsLoggedIn(false);
     setUser("");
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
     localStorage.removeItem("isLoggedIn");
   };
 

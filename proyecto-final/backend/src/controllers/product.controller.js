@@ -1,5 +1,5 @@
 import { categories } from "../schemas/product.schema.js";
-import { ProductService } from "../services/product.services.js";
+import { ProductService } from "../services/product.service.js";
 
 const orderByOptions = ["name", "price"];
 

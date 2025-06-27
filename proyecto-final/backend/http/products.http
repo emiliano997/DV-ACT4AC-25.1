@@ -1,6 +1,7 @@
 ### GET All Products
 
 GET http://localhost:5000/api/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlbWkucGVyZXpAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUxMDU0NTM3LCJleHAiOjE3NTEwNTgxMzd9.o-7hdjzmVT5I4pbSP_ZG7jqSPS-Wik8yY16hPqb4WkE
 
 ### GET With Query Parameters
 
@@ -8,18 +9,20 @@ GET http://localhost:5000/api/products?orderBy=price&category=accessories
 
 ### GET By ID
 
-GET http://localhost:5000/api/products/1
+GET http://localhost:5000/api/products/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1c2VyMUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc1MTA1NDYxNSwiZXhwIjoxNzUxMDU4MjE1fQ.UJHZ5fqRwjI875vWGr10P02NWC5gENg17CAMhE5Q90U
 
 ### POST Create Product
 
 POST http://localhost:5000/api/products
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlbWkucGVyZXpAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUxMDU0NTM3LCJleHAiOjE3NTEwNTgxMzd9.o-7hdjzmVT5I4pbSP_ZG7jqSPS-Wik8yY16hPqb4WkE
 
 {
-  "name": "MacBook Pro 2023",
-  "description": "Latest model with M2 chip",
-  "price": 2500,
-  "stock": 10,
+  "name": "MacBook Pro 2020",
+  "description": "2020 model with M chip",
+  "price": 1800,
+  "stock": 15,
   "category": "laptops",
   "image": "https://example.com/macbook-pro-2023.jpg"
 }
